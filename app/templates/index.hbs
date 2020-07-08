@@ -1,0 +1,16 @@
+<div class="jumbo">
+  {{!-- <button type="button" {{on "click" this.getUsers}}>Get User</button>
+  <button type="button" {{on "click" this.getWeatherInfo}}>Get Weather</button> --}}
+  {{#if this.loggedIn}}
+    <button type="button" {{on "click" this.logOut}}>Log Out</button>
+  {{else}}  
+    {{#if signupFlow}}
+        <SignUpFlow::SignUp @something={{this.signupFlow}} @completeSignUp={{action this.completeSignUp}}></SignUpFlow::SignUp>
+        <button type="button" {{on "click" this.completeSignUp}}>Complete Sign Up</button> 
+    {{else}}
+        <LogInFlow::LogIn></LogInFlow::LogIn>
+        <button type="button" {{on "click" this.signUp}}>Sign Up</button>
+    {{/if}}
+  {{/if}}
+  
+</div>

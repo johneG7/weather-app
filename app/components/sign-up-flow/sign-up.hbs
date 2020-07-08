@@ -1,0 +1,11 @@
+<div>
+    <label for="username">Username:</label>
+    <Input type="text" name="username" id="username" @value={{username}}/>
+    <label for="password">Password:</label>
+    <Input type="password" name="password" id="password" @value={{password}}/> 
+    <label for="password">Confirm Password:</label>
+    <Input type="password" name="confirm" id="confirm" @value={{confirm}}/>
+
+    <p>{{@something}}</p>
+    <button type="button" {{on "click" (fn @completeSignUp this.username this.password this.confirm)}}>Complete</button> 
+</div>
