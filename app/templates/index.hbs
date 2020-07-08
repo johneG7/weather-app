@@ -1,16 +1,25 @@
-<div class="jumbo">
-  {{!-- <button type="button" {{on "click" this.getUsers}}>Get User</button>
-  <button type="button" {{on "click" this.getWeatherInfo}}>Get Weather</button> --}}
+{{#if this.loggedIn}}
+    <div class="navbar">
+        <div>My Weather</div>
+        <a {{action this.logOut}}>Log Out</a>
+    </div>
+{{/if}}
+
+<div class="main {{if this.loggedIn 'logged-in'}}">
   {{#if this.loggedIn}}
-    <button type="button" {{on "click" this.logOut}}>Log Out</button>
-  {{else}}  
+    <WeatherView::WeatherView></WeatherView::WeatherView>
+  {{else}}
+  <div class="login-banner">My Weather</div>  
     {{#if signupFlow}}
         <SignUpFlow::SignUp @something={{this.signupFlow}} @completeSignUp={{action this.completeSignUp}}></SignUpFlow::SignUp>
-        <button type="button" {{on "click" this.completeSignUp}}>Complete Sign Up</button> 
+        <div class="flow">
+            <button class="signup-btn button" type="button" {{on "click" this.completeSignUp}}>Complete Sign Up</button>     
+        </div>
     {{else}}
         <LogInFlow::LogIn></LogInFlow::LogIn>
-        <button type="button" {{on "click" this.signUp}}>Sign Up</button>
+        <div class="signup-btn-container">
+            <button class="main-btn" type="button" {{on "click" this.signUp}}>Sign Up</button>
+        </div>
     {{/if}}
   {{/if}}
-  
 </div>

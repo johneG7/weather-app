@@ -1,0 +1,39 @@
+<div class="weather-view-container">
+    <div class="input-container">
+        <Input class="forecast-location-input" type="text" @value={{city}} />
+        <button class="forecast-button" type="button" {{on "click" this.getCurrentWeather}}>Add Location</button>
+    </div>
+</div>
+
+    {{#each this.currentWeather as |currentWeather index|}}
+        <div class="weather-view-container">
+            <div class="upper-inner-container">
+                <div class="city-name"> 
+                    {{currentWeather.location.name}}
+                </div>
+                <div class="close-btn"> 
+                    <button class="forecast-btn" type="button" {{on "click" (fn this.closeWeatherBox index)}}>close</button>
+                </div>
+            </div>
+            <div class="city-info"> 
+                {{currentWeather.location.region}} - {{moment-format currentWeather.location.localtime 'dddd, MMMM Do'}}   
+            </div>
+            <div class="weather-digest">
+                {{#each currentWeather.current.weather_descriptions as |description|}} 
+                    {{description}}
+                {{/each}}
+            </div>
+            <div class="weather-display">
+                {{#each currentWeather.current.weather_icons as |icon|}} 
+                    <div class="weather-icon"><img src={{icon}}></div>
+                {{/each}}
+                <div class="weather-temp">{{currentWeather.current.temperature}}°F</div>
+            </div>
+            <table>
+                <tr> <td>Pressure</td> <td>{{currentWeather.current.pressure}} hpa</td> </tr>
+                <tr> <td>Humidity</td> <td>{{currentWeather.current.humidity}}%</td> </tr>
+                <tr> <td>Wind Speed</td> <td>{{currentWeather.current.wind_speed}} mph</td> </tr>
+                <tr> <td>Wind Direction</td> <td>{{currentWeather.current.wind_dir}}</td> </tr>
+            </table>
+        </div>
+    {{/each}}

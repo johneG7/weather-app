@@ -1,0 +1,82 @@
+.weather-view-container{
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px 0px lightgrey;
+    padding: 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.upper-inner-container{
+    display: flex;
+    justify-content: space-between;
+    .forecast-btn{
+        border: none;
+        color: cornflowerblue;
+    }
+}
+.weather-display{
+    display: flex;
+    justify-content: center;
+    align-content: space-evenly;
+    margin-top: .5rem;
+    // margin-bottom: .5rem;
+}
+
+.weather-digest, .city-info{
+    font-size: 1rem;
+    color: gray;
+}
+
+.city-name{
+    font-size: 3rem;
+    color: cornflowerblue;
+}
+
+.weather-icon, .weather-temp{
+    width: 50%;
+}
+
+.weather-temp{
+    font-size: 3rem;
+}
+
+table{
+    width: 100%;
+    tr{
+        td{
+            font-size: 1rem;
+            color: gray; 
+            &:nth-child(2){
+                text-align: right;
+            }
+        }
+    }
+}
+
+.weather-icon{
+    img{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+.weather-view-container{
+    margin-top: 4rem;
+}
+
+.forecast-button{
+    height: 3rem;
+    width: 10rem;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+Input.forecast-location-input{
+    width: 65%;
+    margin-right: 3rem;
+    border: 1px solid rgb(155, 155, 155);
+}
+.input-container{
+    padding-top: 1rem;
+}

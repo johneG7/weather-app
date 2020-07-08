@@ -1,7 +1,9 @@
-<div>
-    <label for="username">Username:</label>
+<div class="log-in-flow-form">
+    <label for="username">Email</label>
     <Input type="text" name="username" id="username" @value={{username}}/>
-    <label for="password">Password:</label>
+    <label for="password">Password</label>
     <Input type="password" name="password" id="password" @value={{password}}/> 
-    <button type="button" {{on "click" this.verifyCredentials}}>Log In</button>
+</div>
+<div class="log-in-button-container">
+    <button class='main-btn' type="button" {{on "click" this.verifyCredentials}}>Log In</button>
 </div>
