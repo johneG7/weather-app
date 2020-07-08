@@ -65,18 +65,21 @@ table{
 
 .forecast-button{
     height: 3rem;
-    width: 10rem;
     border: 1px solid white;
     border-radius: 4px;
     background-color: cornflowerblue;
     color: white;
+    padding: 5px;
 }
 
 Input.forecast-location-input{
-    width: 65%;
-    margin-right: 3rem;
+    margin-right: 1rem;
     border: 1px solid rgb(155, 155, 155);
 }
 .input-container{
     padding-top: 1rem;
+    display:flex;
+    justify-content: center;
+    align-content: space-evenly;
+
 }
