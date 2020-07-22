@@ -10,11 +10,16 @@ export default class IndexController extends Controller {
     @tracked signupFlow = false;
     @tracked username;
     @tracked password;
+    @tracked confirm;
 
     @computed('loginService.loggedIn')
     get loggedIn(){
         return this.loginService.loggedIn;
     } 
+
+    set signupFlow(val) {
+        this.signupFlow = val;
+    }
     
 
     @action
@@ -37,13 +42,5 @@ export default class IndexController extends Controller {
         this.signupFlow = true;
     }
 
-    @action 
-    completeSignUp(username,password,confirm){ 
-        if(password === confirm){
-            console.log(username,password,confirm);
-            let u = this.store.createRecord('user',{username: username, password: password});
-            u.save();
-            this.signupFlow = false;
-        }
-    }
+
 }

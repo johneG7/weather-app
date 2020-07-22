@@ -5,4 +5,7 @@
     <Input type="password" name="password" id="password" @value={{password}}/> 
     <label for="password">Confirm Password:</label>
     <Input type="password" name="confirm" id="confirm" @value={{confirm}}/>
+    <div class="signup-btn-container">
+        <button class="main-btn" type="button" {{on "click" this.completeSignUp}}>Complete Sign Up</button>     
+    </div>
 </div>

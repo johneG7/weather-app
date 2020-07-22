@@ -11,10 +11,7 @@
   {{else}}
   <div class="login-banner">My Weather</div>  
     {{#if signupFlow}}
-        <SignUpFlow::SignUp @completeSignUp={{action this.completeSignUp}}></SignUpFlow::SignUp>
-        <div class="signup-btn-container">
-            <button class="main-btn" type="button" {{on "click" this.completeSignUp}}>Complete Sign Up</button>     
-        </div>
+        <SignUpFlow::SignUp @signupFlow={{signupFlow}} @username={{username}} @password={{password}} @confirm={{confirm}}></SignUpFlow::SignUp>
     {{else}}
         <LogInFlow::LogIn></LogInFlow::LogIn>
         <div class="signup-btn-container">
